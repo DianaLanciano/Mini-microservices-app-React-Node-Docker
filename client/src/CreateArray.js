@@ -1,5 +1,6 @@
 import React,  { useState } from 'react';
 import axios from 'axios';
+import './styles.css';
 
 export default () => {
 
@@ -24,8 +25,10 @@ export default () => {
                 <input value={number} onChange={(e) => setNumber(e.target.value)}  className="form-control" />
             </div>
             <button className="btn btn-primary">Submit</button>
-            {array.data != undefined ? <h1>{array.data + ","}</h1> : <></>}
-            {console.log(array.data)} 
+            <div className="scroller">
+            {array.data != undefined ? array.data.map(number => <li key={number}>{number}</li>) : <></>}
+            </div>
+            
         </form>
     </div>
 };
