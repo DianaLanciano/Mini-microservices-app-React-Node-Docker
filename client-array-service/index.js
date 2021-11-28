@@ -11,7 +11,6 @@ const port = 5000;
 let arrayOfNumbers = [];
 
 app.get('/', (req, res) => {
-    //res.send(arrayOfNumbers);
     res.send("hello world!")
 });
 
@@ -26,10 +25,10 @@ app.post('/', (req, res) => {
             arrayOfNumbers.push(i);
         }
 
-        //console.log({arrayOfNumbers});
        axios.post(`http://localhost:5001/log`, {
          arrayOfNumbers }
        );
+
         res.status(201).send(arrayOfNumbers);
 
     }

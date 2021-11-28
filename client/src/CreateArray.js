@@ -15,8 +15,15 @@ export default () => {
             number 
     });
         setReversedArray(reversedArray);
-      
     };
+
+    const dataReciver = () => {
+        if(array.data === "Peek a number between 1-1000"){
+            return <h2>Peek a number between 1-1000</h2>;
+        } else {
+            return array.data.map(number => <li key={number}>{number}</li>);
+        }
+    }
 
     return <div>
         <form onSubmit={onSubmit}> 
@@ -26,7 +33,7 @@ export default () => {
             </div>
             <button className="btn btn-primary">Submit</button>
             <div className="scroller">
-            {array.data != undefined ? array.data.map(number => <li key={number}>{number}</li>) : <></>}
+            {array.data !== undefined ? dataReciver() : <></>}
             </div>
             
         </form>
