@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     const number = req.body.number;
     console.log("the number is " + number);
-    if(number < 1 || number > 100){
-        res.send("Peek a numbse between 1-1000");
+    if(number < 1 || number > 1000){
+        res.send("Peek a number between 1-1000");
     } else {
         arrayOfNumbers = [];
         for(let i = number - 1; i > 0; i--){
