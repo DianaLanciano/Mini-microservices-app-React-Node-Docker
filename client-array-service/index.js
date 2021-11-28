@@ -25,7 +25,7 @@ app.post('/', (req, res) => {
             arrayOfNumbers.push(i);
         }
 
-       axios.post(`http://localhost:5001/log`, {
+       axios.post(`http://localhost:5001`, {
          arrayOfNumbers }
        );
 

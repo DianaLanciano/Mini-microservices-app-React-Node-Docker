@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 
 const arrayOfnumbersTolog = [];
 
-app.get('/log', (req, res) => {
+app.get('/', (req, res) => {
     res.send('log to console');
 });
 
-app.post('/log', (req, res) => {
+app.post('/', (req, res) => {
     let reversedArr = req.body.arrayOfNumbers;
     console.log("reversedArr is " + reversedArr);
     
