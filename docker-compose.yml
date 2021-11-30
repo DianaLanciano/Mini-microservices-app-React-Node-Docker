@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  client:
+    build: ./client/.
+    ports:
+      - "3000:3000"
+
+  backend:
+    build: ./client-array-service/.
+    ports:
+      - "5000:5000"
+  
+  logs:
+    build: ./log-service/.
+    ports:
+      - "5001:5001"

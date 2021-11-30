@@ -11,22 +11,21 @@ const port = 5000;
 let arrayOfNumbers = [];
 
 app.get('/', (req, res) => {
-    res.send("hello world!")
+    res.send("Array service")
 });
 
 app.post('/', (req, res) => {
     const number = req.body.number;
-    console.log("the number is " + number);
-    if(number < 1 || number > 1000){
-        res.send("Peek a number between 1-1000");
+    if(number <= 1 || number > 1000){
+        res.send("Choose a number from 1-1000");
     } else {
         arrayOfNumbers = [];
         for(let i = number - 1; i > 0; i--){
             arrayOfNumbers.push(i);
         }
 
-       axios.post(`http://localhost:5001`, {
-         arrayOfNumbers }
+       axios.post(`http://logs:5001`, {
+         arrayOfNumbers, number }
        );
 
         res.status(201).send(arrayOfNumbers);

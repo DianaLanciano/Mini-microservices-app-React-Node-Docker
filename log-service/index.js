@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     let reversedArr = req.body.arrayOfNumbers;
-    console.log("reversedArr is " + reversedArr);
+    console.log("The number that was sent is " + req.body.number);
+    console.log("The reversed array is " + reversedArr);
     
 });
 

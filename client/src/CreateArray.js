@@ -18,8 +18,8 @@ export default () => {
     };
 
     const dataReciver = () => {
-        if(array.data === "Peek a number between 1-1000"){
-            return <h2>Peek a number between 1-1000</h2>;
+        if(array.data === "Choose a number from 1-1000"){
+            return <h2>Choose a number from 1-1000</h2>;
         } else {
             return array.data.map(number => <li key={number}>{number}</li>);
         }
